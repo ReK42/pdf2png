@@ -1,4 +1,4 @@
-"""PROJECT_DESC"""
+"""CLI utility to convert PDF pages to PNG images."""
 
 from datetime import datetime, timezone
 from typing import TYPE_CHECKING
@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 import click
 from rich.console import Console
 
-from MODULE_NAME import __copyright__, __name__, __version__
+from pdf2png import __copyright__, __name__, __version__
 
 
 if TYPE_CHECKING:
@@ -22,9 +22,9 @@ _version: str = f"{__name__} v{__version__} -- {__copyright__}"
 @click.pass_context
 def main(ctx: click.Context) -> int:
     """
-    PROJECT_DESC
+    CLI utility to convert PDF pages to PNG images.
 
-    Run PROJECT_NAME COMMAND --help for details on each command.
+    Run pdf2png COMMAND --help for details on each command.
     """
     ctx.ensure_object(dict)
 

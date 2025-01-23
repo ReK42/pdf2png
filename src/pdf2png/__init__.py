@@ -12,5 +12,5 @@ def export(defn: Any) -> None:  # noqa: ANN401
     return defn
 
 
-__copyright__ = "Copyright (c) 2024 Ryan Kozak"
-from MODULE_NAME._version import __version__
+__copyright__ = "Copyright (c) 2025 Ryan Kozak"
+from pdf2png._version import __version__
