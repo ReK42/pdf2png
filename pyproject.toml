@@ -1,0 +1,131 @@
+#########################
+# Project and Packaging #
+#########################
+[project]
+name = "PROJECT_NAME"
+dynamic = ["version"]
+description = "PROJECT_DESC"
+requires-python = ">=3.9"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Ryan Kozak", email = "ReK42@users.noreply.github.com"},
+]
+maintainers = [
+    {name = "Ryan Kozak", email = "ReK42@users.noreply.github.com"},
+]
+keywords = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Typing :: Typed",
+]
+dependencies = [
+    "click == 8.1.7",
+    "rich == 13.7.1",
+]
+
+[project.urls]
+Repository = "https://github.com/ReK42/PROJECT_NAME"
+Issues = "https://github.com/ReK42/PROJECT_NAME/issues"
+
+[project.scripts]
+PROJECT_NAME = "MODULE_NAME.__main__:main"
+
+[project.optional-dependencies]
+test = [
+    "mypy == 1.11.1",
+    "ruff == 0.5.6",
+    "black == 24.8.0",
+]
+build = [
+    "setuptools == 72.1.0",
+    "setuptools-scm == 8.1.0",
+    "build == 1.2.1",
+    "twine == 5.1.1",
+]
+
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+MODULE_NAME = ["py.typed"]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+write_to = "src/MODULE_NAME/_version.py"
+tag_regex = '^(?:[\w-]+[-/])?(?P<version>[vV]?\d+(?:\.\d+){0,2}[^\+]*)(?:\+.*)?$'
+fallback_version = "0.0.1.dev1"
+
+###########################
+# Development Environment #
+###########################
+[tool.mypy]
+cache_dir = ".cache/mypy"
+pretty = true
+files = "src"
+
+[tool.ruff]
+line-length = 120
+cache-dir = ".cache/ruff"
+src = ["src"]
+exclude = ["_version.py"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "CPY",      # flake8-copyright
+    "FIX",      # flake8-fixme
+
+    "C408",     # unnecessary-collection-call
+    "D203",     # one-blank-line-before-class (use D211 instead)
+    "D212",     # multi-line-summary-first-line (use D213 instead)
+    "TD002",    # missing-todo-author
+    "TD003",    # missing-todo-link
+
+    # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "COM812",   # missing-trailing-comma
+    "COM819",   # prohibited-trailing-comma
+    "D206",     # indent-with-spaces
+    "D300",     # triple-single-quotes
+    "E111",     # indentation-with-invalid-multiple
+    "E114",     # indentation-with-invalid-multiple-comment
+    "E117",     # over-indented
+    "ISC001",   # single-line-implicit-string-concatenation
+    "ISC002",   # multi-line-implicit-string-concatenation
+    "Q000",     # bad-quotes-inline-string
+    "Q001",     # bad-quotes-multiline-string
+    "Q002",     # bad-quotes-docstring
+    "Q003",     # avoidable-escaped-quote
+    "W191",     # tab-indentation
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "E402",     # module-import-not-at-top-of-file
+    "F401",     # unused-import
+]
