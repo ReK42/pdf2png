@@ -66,7 +66,7 @@ jobs:
         id: version
         shell: bash
         run: |
-          export VERSION=$(python -c "import sys;sys.path.append('src/MODULE_NAME');from _version import version;print(version)")
+          export VERSION=$(python -c "import sys;sys.path.append('src/pdf2png');from _version import version;print(version)")
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "version=$VERSION"
           [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]] || exit 1

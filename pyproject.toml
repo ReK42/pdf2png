@@ -33,6 +33,7 @@ classifiers = [
 dependencies = [
     "click == 8.1.8",
     "rich == 13.9.4",
+    "pypdf == 5.1.0",
 ]
 
 [project.urls]
@@ -46,7 +47,6 @@ pdf2png = "pdf2png.__main__:main"
 test = [
     "mypy == 1.14.1",
     "ruff == 0.9.3",
-    "black == 24.10.0",
 ]
 build = [
     "setuptools == 75.8.0",

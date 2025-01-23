@@ -30,6 +30,7 @@ jobs:
           - "3.10"
           - "3.11"
           - "3.12"
+          - "3.13"
         platform:
           - ubuntu-latest
           - macos-latest
@@ -61,4 +62,4 @@ jobs:
         run: ruff format --diff src
 
       - name: Test
-        run: PROJECT_NAME --version
+        run: pdf2png --version

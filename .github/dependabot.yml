@@ -20,7 +20,6 @@ updates:
         patterns:
           - "mypy"
           - "ruff"
-          - "black"
           - "setuptools"
           - "setuptools-scm"
           - "build"
