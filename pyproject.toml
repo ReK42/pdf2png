@@ -110,6 +110,8 @@ ignore = [
     "C408",     # unnecessary-collection-call
     "D203",     # one-blank-line-before-class (use D211 instead)
     "D212",     # multi-line-summary-first-line (use D213 instead)
+    "FBT001",   # boolean-type-hint-positional-argument
+    "FBT002",   # boolean-default-value-positional-argument
     "TD002",    # missing-todo-author
     "TD003",    # missing-todo-link
 
