@@ -1,34 +1,31 @@
-# PROJECT_NAME
-[![PyPi Version](https://img.shields.io/pypi/v/PROJECT_NAME.svg)](https://pypi.python.org/pypi/PROJECT_NAME)
-[![PyPI Status](https://img.shields.io/pypi/status/PROJECT_NAME.svg)](https://pypi.python.org/pypi/PROJECT_NAME)
-[![Python Versions](https://img.shields.io/pypi/pyversions/PROJECT_NAME.svg)](https://pypi.python.org/pypi/PROJECT_NAME)
-[![License](https://img.shields.io/github/license/ReK42/PROJECT_NAME)](https://github.com/ReK42/PROJECT_NAME/blob/main/LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/ReK42/PROJECT_NAME/main?logo=github)](https://github.com/ReK42/PROJECT_NAME/commits/main)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/ReK42/PROJECT_NAME/build.yml?logo=github)](https://github.com/ReK42/PROJECT_NAME/actions)
+# pdf2png
+[![PyPi Version](https://img.shields.io/pypi/v/pdf2png.svg)](https://pypi.python.org/pypi/pdf2png)
+[![PyPI Status](https://img.shields.io/pypi/status/pdf2png.svg)](https://pypi.python.org/pypi/pdf2png)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pdf2png.svg)](https://pypi.python.org/pypi/pdf2png)
+[![License](https://img.shields.io/github/license/ReK42/pdf2png)](https://github.com/ReK42/pdf2png/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/ReK42/pdf2png/main?logo=github)](https://github.com/ReK42/pdf2png/commits/main)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/ReK42/pdf2png/build.yml?logo=github)](https://github.com/ReK42/pdf2png/actions)
 
-PROJECT_DESC
-
-# TODO
-1. Find & replace PROJECT_NAME with the CLI command/PyPI project/Github repo name.
-1. Find & replace MODULE_NAME with the project's Python root module name (`src/MODULE_NAME)`.
-1. Find & replace PROJECT_DESC with the one-line project description.
-1. Update `src/MODULE_NAME/__init__.py`
-1. Begin coding...
+CLI utility to convert PDF pages to PNG images.
 
 ## Installation
-Install [Python](https://www.python.org/downloads/), then install [pipx](https://github.com/pypa/pipx) and use it to install `PROJECT_NAME`:
+1. Install [Python](https://www.python.org/downloads/).
+1. Install [pipx](https://github.com/pypa/pipx).
+1. Install [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html).
+1. Install ImageMagick according to the instructions [here](https://docs.wand-py.org/en/latest/guide/install.html).
+1. Use `pipx` to install `pdf2png`:
 ```sh
-pipx install PROJECT_NAME
+pipx install pdf2png
 ```
 
 ## Usage
-For all options, run `PROJECT_NAME <COMMAND> --help`
+For all options, run `pdf2png --help`
 
 ## Development Environment
 ### Installation
 ```sh
-git clone https://github.com/ReK42/PROJECT_NAME.git
-cd PROJECT_NAME
+git clone https://github.com/ReK42/pdf2png.git
+cd pdf2png
 python -m venv .env
 source .env/bin/activate
 python -m pip install --upgrade pip pre-commit
