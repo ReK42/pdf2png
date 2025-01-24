@@ -1,4 +1,4 @@
-"""PROJECT_DESC"""
+"""CLI utility to convert PDF pages to PNG images."""
 
 from typing import Any
 

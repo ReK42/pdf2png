@@ -34,6 +34,7 @@ dependencies = [
     "click == 8.1.8",
     "rich == 13.9.4",
     "pypdf == 5.1.0",
+    "Wand == 0.6.13",
 ]
 
 [project.urls]
@@ -81,6 +82,10 @@ fallback_version = "0.0.1.dev1"
 cache_dir = ".cache/mypy"
 pretty = true
 files = "src"
+
+[[tool.mypy.overrides]]
+module = ["wand.*"]
+ignore_missing_imports = true
 
 [tool.ruff]
 line-length = 120
