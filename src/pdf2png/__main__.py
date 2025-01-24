@@ -56,10 +56,16 @@ class IntRangeParamType(click.ParamType):
     "--pages",
     type=IntRangeParamType(),
     default=None,
-    help="Pages to convert, will convert all if not specified. E.g.: 1,3-5,7",
+    help="Pages to convert, will convert all if not specified, e.g.: 1,3-5,7",
 )
-@click.option("-r", "--resolution", type=int, default=None, help="Maximum dimension, in pixels")
-@click.option("-d", "--dpi", type=int, default=300, help="DPI for converted image")
+@click.option(
+    "-r",
+    "--resolution",
+    type=int,
+    default=None,
+    help="Resize to a maximum dimension if specified, in pixels, e.g. 2000",
+)
+@click.option("-d", "--dpi", type=int, default=300, help="DPI for converted image, default: 300")
 @click.option("-v", "--verbose", is_flag=True, help="Verbose output")
 @click.help_option("-h", "--help")
 @click.version_option(__version__, "--version", message=_version)
